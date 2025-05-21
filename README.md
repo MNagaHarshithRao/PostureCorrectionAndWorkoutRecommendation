@@ -1,61 +1,65 @@
+# 🧘‍♂️ Posture Correction & Workout Plan Generator
 
-# 🧘‍♂️ Posture Correction and Workout Plan Generator
-
-This project is focused on **detecting human posture**, identifying **postural imbalances**, and generating a **customized workout plan** to improve posture. Using pose estimation via **MoveNet**, trained heavily on the **COCOPose** dataset, our system can assess posture from images or live video and recommend corrective exercises accordingly.
+This project detects human posture, identifies postural imbalances, and generates customized workout plans to correct them. It leverages **MoveNet**, a fast and accurate pose estimation model trained extensively on the **COCOPose** dataset, to analyze posture from webcam input or images.
 
 ---
 
 ## 📌 Features
 
-* 📷 **Posture Detection**: Uses MoveNet to analyze 2D skeletal keypoints from images or video frames.
-* 🧍 **Posture Classification**: Detects common postural deviations like forward head, rounded shoulders, anterior pelvic tilt, etc.
-* 🏋️ **Workout Plan Generation**: Suggests personalized exercises based on detected issues.
-* 📊 **Progress Tracking** *(Optional)*: Logs posture improvements over time with visual keypoint comparison.
+- 📷 **Real-Time Posture Detection** using webcam or image input
+- 🧍 **Posture Classification**: Identifies common deviations like:
+  - Forward Head Posture
+  - Rounded Shoulders
+  - Anterior Pelvic Tilt
+- 🏋️ **Workout Plan Generation**: Tailored exercise routines based on detected postural issues
 
 ---
 
-## 🧠 Model and Dataset
+## 🧠 Model & Dataset
 
-### Pose Estimation Model: [MoveNet](https://www.tensorflow.org/hub/tutorials/movenet)
+### 🔍 MoveNet (by TensorFlow Hub)
+- Lightning-fast, accurate pose estimation
+- Supports **SinglePose** and **MultiPose** modes
+- Well-suited for real-time applications
 
-* A fast and accurate model for human pose estimation.
-* Supports both **SinglePose** (for one person) and **MultiPose** variants.
-
-### Dataset: [COCOPose](https://cocodataset.org/)
-
-* A curated version of the COCO dataset focused on keypoint annotations.
-* Contains over 100k labeled images of human poses.
-* MoveNet was fine-tuned on COCOPose for superior skeletal landmark accuracy.
+### 🗂️ Dataset: [COCOPose](https://cocodataset.org/)
+- Derived from the COCO dataset with rich keypoint annotations
+- Contains 100K+ human pose images
+- MoveNet was pre-trained and fine-tuned on this dataset
 
 ---
 
 ## 🚀 Installation
 
+Clone the repository and install dependencies:
+
 ```bash
 git clone https://github.com/your-username/posture-correction.git
 cd posture-correction
 pip install -r requirements.txt
-```
+````
 
 ---
 
 ## 🛠️ Usage
 
-### 1. Run Posture Analysis
+### 1. Analyze Posture via Webcam
 
 ```bash
-python analyze_posture.py --input your posture through the webcam detection 
+python analyze_posture.py --input webcam
 ```
 
-* Outputs keypoints and highlights posture deviations.
+* Captures live video and performs pose estimation
+* Outputs detected keypoints and identifies posture issues
 
-### 2. Generate Workout Plan
+### 2. Generate a Workout Plan
 
 ```bash
 python generate_workout.py --analysis posture_results.json
 ```
 
-* Returns a structured workout plan targeting weak or tight muscle groups.
+* Inputs the JSON output from posture analysis
+* Returns a customized workout plan to correct imbalances
 
 ---
 
@@ -64,12 +68,12 @@ python generate_workout.py --analysis posture_results.json
 ```
 posture-correction/
 │
-├── data/                     # Sample input images and videos
-├── models/                   # Pose detection and classification logic
-├── utils/                    # Helper scripts (e.g., keypoint parser, angle calculator)
-├── workouts/                 # Library of exercises with metadata
+├── data/                     # Sample inputs (images/videos)
+├── models/                   # Posture analysis and classification logic
+├── utils/                    # Helper scripts (e.g., keypoint parser)
+├── workouts/                 # Exercise metadata and plans
 ├── analyze_posture.py        # Main posture detection script
-├── generate_workout.py       # Personalized plan generator
+├── generate_workout.py       # Workout plan generator
 ├── requirements.txt
 └── README.md
 ```
@@ -78,21 +82,37 @@ posture-correction/
 
 ## 🧪 Example
 
-1. **Input**: webcam detection of the persons posture 
-2. **Detected Issue**: Forward Head Posture, Rounded Shoulders.
-3. **Generated Plan**:
+**Input**: Webcam feed of user standing in side profile
+**Detected Issues**:
 
-   * Chin tucks – 3x10 reps
-   * Wall angels – 3x15 reps
-   * Thoracic extensions – 3x12 reps
+* Forward Head Posture
+* Rounded Shoulders
+
+**Workout Plan**:
+
+* ✅ Chin Tucks – 3 sets of 10 reps
+* ✅ Wall Angels – 3 sets of 15 reps
+* ✅ Thoracic Extensions – 3 sets of 12 reps
+
+---
+
+## 📈 Future Enhancements
+
+* [ ] Fully automated real-time webcam posture tracking
+* [ ] Voice-guided exercise feedback system
+* [ ] Progress tracker and reporting dashboard
 
 ---
 
-## 📈 Future Improvements
+## 🧑‍💻 Author
 
-* Integrate real-time webcam support.
-* Add AI-based feedback during workouts.
-* Expand to full-body biomechanics analysis.
+**M.NagaHarshith Rao**
+GitHub: [@MNagaHarshithRao](https://github.com/MNagaHarshithRao)
 
 ---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
 
