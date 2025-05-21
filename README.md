@@ -1,4 +1,5 @@
-🧘‍♂️ Posture Correction and Workout Plan Generator
+# 🧘‍♂️ Posture Correction and Workout Plan Generator
+
 This project is focused on detecting human posture, identifying postural imbalances, and generating a customized workout plan to improve posture. Using pose estimation via MoveNet, trained heavily on the COCOPose dataset, our system can assess posture from images or live video and recommend corrective exercises accordingly.
 
 📌 Features
