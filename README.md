@@ -1,55 +1,67 @@
+
 # 🧘‍♂️ Posture Correction and Workout Plan Generator
 
-This project is focused on detecting human posture, identifying postural imbalances, and generating a customized workout plan to improve posture. Using pose estimation via MoveNet, trained heavily on the COCOPose dataset, our system can assess posture from images or live video and recommend corrective exercises accordingly.
+This project is focused on **detecting human posture**, identifying **postural imbalances**, and generating a **customized workout plan** to improve posture. Using pose estimation via **MoveNet**, trained heavily on the **COCOPose** dataset, our system can assess posture from images or live video and recommend corrective exercises accordingly.
 
-📌 Features
-📷 Posture Detection: Uses MoveNet to analyze 2D skeletal keypoints from images or video frames.
+---
 
-🧍 Posture Classification: Detects common postural deviations like forward head, rounded shoulders, anterior pelvic tilt, etc.
+## 📌 Features
 
-🏋️ Workout Plan Generation: Suggests personalized exercises based on detected issues.
+* 📷 **Posture Detection**: Uses MoveNet to analyze 2D skeletal keypoints from images or video frames.
+* 🧍 **Posture Classification**: Detects common postural deviations like forward head, rounded shoulders, anterior pelvic tilt, etc.
+* 🏋️ **Workout Plan Generation**: Suggests personalized exercises based on detected issues.
+* 📊 **Progress Tracking** *(Optional)*: Logs posture improvements over time with visual keypoint comparison.
 
-📊 Progress Tracking (Optional): Logs posture improvements over time with visual keypoint comparison.
+---
 
-🧠 Model and Dataset
-Pose Estimation Model: MoveNet
-A fast and accurate model for human pose estimation.
+## 🧠 Model and Dataset
 
-Supports both SinglePose (for one person) and MultiPose variants.
+### Pose Estimation Model: [MoveNet](https://www.tensorflow.org/hub/tutorials/movenet)
 
-Dataset: COCOPose
-A curated version of the COCO dataset focused on keypoint annotations.
+* A fast and accurate model for human pose estimation.
+* Supports both **SinglePose** (for one person) and **MultiPose** variants.
 
-Contains over 100k labeled images of human poses.
+### Dataset: [COCOPose](https://cocodataset.org/)
 
-MoveNet was fine-tuned on COCOPose for superior skeletal landmark accuracy.
+* A curated version of the COCO dataset focused on keypoint annotations.
+* Contains over 100k labeled images of human poses.
+* MoveNet was fine-tuned on COCOPose for superior skeletal landmark accuracy.
 
-🚀 Installation
-bash
-Copy
-Edit
+---
+
+## 🚀 Installation
+
+```bash
 git clone https://github.com/your-username/posture-correction.git
 cd posture-correction
 pip install -r requirements.txt
-🛠️ Usage
-1. Run Posture Analysis
-bash
-Copy
-Edit
-python analyze_posture.py --input your_image_or_video.mp4
-Outputs keypoints and highlights posture deviations.
+```
 
-2. Generate Workout Plan
-bash
-Copy
-Edit
+---
+
+## 🛠️ Usage
+
+### 1. Run Posture Analysis
+
+```bash
+python analyze_posture.py --input your posture through the webcam detection 
+```
+
+* Outputs keypoints and highlights posture deviations.
+
+### 2. Generate Workout Plan
+
+```bash
 python generate_workout.py --analysis posture_results.json
-Returns a structured workout plan targeting weak or tight muscle groups.
+```
 
-📁 Project Structure
-bash
-Copy
-Edit
+* Returns a structured workout plan targeting weak or tight muscle groups.
+
+---
+
+## 📁 Project Structure
+
+```
 posture-correction/
 │
 ├── data/                     # Sample input images and videos
@@ -60,29 +72,27 @@ posture-correction/
 ├── generate_workout.py       # Personalized plan generator
 ├── requirements.txt
 └── README.md
-🧪 Example
-Input: Side view image of a person.
+```
 
-Detected Issue: Forward Head Posture, Rounded Shoulders.
+---
 
-Generated Plan:
+## 🧪 Example
 
-Chin tucks – 3x10 reps
+1. **Input**: webcam detection of the persons posture 
+2. **Detected Issue**: Forward Head Posture, Rounded Shoulders.
+3. **Generated Plan**:
 
-Wall angels – 3x15 reps
+   * Chin tucks – 3x10 reps
+   * Wall angels – 3x15 reps
+   * Thoracic extensions – 3x12 reps
 
-Thoracic extensions – 3x12 reps
+---
 
-📈 Future Improvements
-Integrate real-time webcam support.
+## 📈 Future Improvements
 
-Add AI-based feedback during workouts.
+* Integrate real-time webcam support.
+* Add AI-based feedback during workouts.
+* Expand to full-body biomechanics analysis.
 
-Expand to full-body biomechanics analysis.
-
-🧑‍💻 Authors
-Your Name – GitHub Profile
-
-📜 License
-This project is licensed under the MIT License.
+---
 
